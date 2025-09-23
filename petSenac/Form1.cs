@@ -1,4 +1,5 @@
-﻿using System;
+﻿using petSenac.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace petSenac
 {
     public partial class MenuPrincipal : Form
     {
+        Model.Usuario usuario = new Model.Usuario();
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -20,6 +22,13 @@ namespace petSenac
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
 
+            FormUsuario formUsuario = new FormUsuario(usuario);
+            FormUsuario.ShowDialog();
+        }
+        private void btnCaixa_Click(object sender, EventArgs e)
+        {
+            btnCaixa formCaixa = new btnCaixa(usuario);
+            formCaixa.ShowDialog();
         }
     }
 }
